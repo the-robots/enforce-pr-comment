@@ -1,0 +1,38 @@
+name: Pre-Action Build
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Checkout the repository code
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    # Set up Node.js environment to run ncc
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20'
+
+    # Install dependencies
+    - name: Install dependencies
+      run: npm install
+
+    # Run ncc to bundle the action code and dependencies
+    - name: Build action with ncc
+      run: npx @vercel/ncc build index.js -o dist --license licenses.txt
+
+    # Commit the dist folder to the repo so it is used in subsequent runs
+    - name: Commit the built dist folder
+      run: |
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "GitHub Actions"
+        git add dist/
+        git commit -m "Add dist folder built by ncc"
+        git push origin main
