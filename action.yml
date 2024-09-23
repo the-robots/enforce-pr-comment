@@ -3,7 +3,7 @@ description: 'A GitHub Action that enforces reviewers to add a comment when mark
 author: 'melscoop'
 runs:
   using: 'node12'
-  main: 'index.js'
+  main: 'dist/index.js'    # Point to the bundled file in the dist folder
 branding:
   icon: 'comment-discussion'
   color: 'blue'
