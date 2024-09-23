@@ -1,4 +1,4 @@
-# Enforce PR Approval Comment
+# 🪄 Enforce PR Approval Comment
 
 This Action enforces reviewers to add a comment when marking a pull request as approved.
 
