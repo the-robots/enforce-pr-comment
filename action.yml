@@ -1,0 +1,9 @@
+name: 'Enforce PR Approval Comment'
+description: 'A GitHub Action that enforces reviewers to add a comment when marking a pull request as approved.'
+author: 'melscoop'
+runs:
+  using: 'node12'
+  main: 'index.js'
+branding:
+  icon: 'comment-discussion'
+  color: 'blue'
