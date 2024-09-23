@@ -1,0 +1,12 @@
+{
+  "name": "enforce-pr-approval-comment",
+  "version": "1.0.0",
+  "description": "A GitHub Action that enforces PR approval comments.",
+  "main": "index.js",
+  "dependencies": {
+    "@actions/core": "^1.9.0",
+    "@actions/github": "^5.0.3"
+  },
+  "author": "melscoop",
+  "license": "MIT"
+}
