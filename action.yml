@@ -1,9 +1,14 @@
 name: 'Enforce PR Approval Comment'
 description: 'A GitHub Action that enforces reviewers to add a comment when marking a pull request as approved.'
 author: 'melscoop'
+inputs:
+  github_token:
+    description: 'GitHub token used for authentication'
+    required: true
+
 runs:
   using: 'node12'
-  main: 'dist/index.js'    # Point to the bundled file in the dist folder
+  main: 'dist/index.js' 
 branding:
   icon: 'comment-discussion'
   color: 'blue'
