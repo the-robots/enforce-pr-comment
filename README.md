@@ -16,6 +16,13 @@ on:
 jobs:
   enforce-comment:
     runs-on: ubuntu-latest
+
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
       - name: Enforce PR approval comment
-        uses: the-robots/enforce-pr-comment@v1.0.0
+        uses: the-robots/enforce-pr-comment@v1.0.4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
